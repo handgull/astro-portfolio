@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import PortfolioSentence from "../components/PortfolioSentence.astro";
 import WelcomeMessage from "../components/WelcomeMessage.astro";
 import "aos/dist/aos.css";
+import StackButton from "../components/StackButton.astro";
 ---
 
 <Layout title="handgull's portfolio">
@@ -37,6 +38,10 @@ import "aos/dist/aos.css";
         en="en"
         right={false}
     />
+    <div class="buttons-container">
+        <StackButton imageSrc="js-logo.png" />
+        <StackButton imageSrc="flutter-logo.jpg" />
+    </div>
     <script>
         import { aosInit } from "../js/aos";
 
@@ -46,5 +51,12 @@ import "aos/dist/aos.css";
 <style>
     body {
         padding: 3em;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 250px;
     }
 </style>
