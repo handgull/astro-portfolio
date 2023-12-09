@@ -1,17 +1,18 @@
 ---
 import PortfolioText from "./PortfolioText.astro";
 interface Props {
-	it: string;
+    it: string;
     en: string;
-    right: bool;
+    right: boolean;
 }
 
 const { it, en, right } = Astro.props;
 ---
+
 <div data-aos="fade-up" class="sentences">
-    {right && <div class="spacer"></div>}
+    {right && <div class="spacer" />}
     <PortfolioText it={it} en={en} />
-    {!right && <div class="spacer"></div>}
+    {!right && <div class="spacer" />}
 </div>
 <style>
     .sentences {
