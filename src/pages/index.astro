@@ -1,5 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PortfolioSentence from "../components/PortfolioSentence.astro";
+import WelcomeMessage from "../components/WelcomeMessage.astro";
+import "aos/dist/aos.css";
 ---
 
-<Layout title="handgull's portfolio" />
+<Layout title="handgull's portfolio">
+    <WelcomeMessage it="Ciao, sono Andrea" en="en" />
+    <PortfolioSentence it="Lavoro nell'ambito dello sviluppo frontend dal 2018." en="en" right=true/>
+    <PortfolioSentence it="Uso flutter dalla versione 1.22.0, la mia architettura preferita si basa su bloc." en="en"/>
+    <PortfolioSentence it="Adoro lo stack di Vue, ma ho esperienza soprattutto con react e next.js" en="en" right=true/>
+    <PortfolioSentence it="Ho un approccio TDD (con un occhio di riguardo sull'architettura)." en="en"/>
+    <PortfolioSentence it="A volte i big 3 (React, Angular, Vue) sono troppo overkill o poco adatti... Conosco molto bene anche ES vanilla" en="en" right=true/>
+    <PortfolioSentence it="Ho pubblicato un app contacalorie completamente in flutter." en="en"/>
+    <script>
+        import { aosInit } from "../js/aos";
+
+        aosInit();
+    </script>
+</Layout>
+<style>
+    body {
+        padding: 3em;
+    }
+</style>

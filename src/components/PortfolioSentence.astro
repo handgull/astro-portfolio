@@ -1,0 +1,27 @@
+---
+import PortfolioText from "./PortfolioText.astro";
+interface Props {
+	it: string;
+    en: string;
+    right: bool;
+}
+
+const { it, en, right } = Astro.props;
+---
+<div data-aos="fade-up" class="sentences">
+    {right && <div class="spacer"></div>}
+    <PortfolioText it={it} en={en} />
+    {!right && <div class="spacer"></div>}
+</div>
+<style>
+    .sentences {
+        font-size: 3.5em;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 60vh;
+    }
+
+    .spacer {
+        width: 100%;
+    }
+</style>

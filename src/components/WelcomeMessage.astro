@@ -1,0 +1,18 @@
+---
+import PortfolioText from "./PortfolioText.astro";
+interface Props {
+	it: string;
+    en: string;
+}
+
+const { it, en } = Astro.props;
+---
+<div class="welcome-message">
+    <PortfolioText it={it} en={en} />
+</div>
+<style>
+    .welcome-message {
+        font-size: 5em;
+        margin-bottom: 3em;
+    }
+</style>
