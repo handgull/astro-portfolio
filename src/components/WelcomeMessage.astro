@@ -15,4 +15,10 @@ const { it, en } = Astro.props;
         font-size: 5em;
         margin-bottom: 3em;
     }
+
+    @media (resolution >= 2dppx) {
+        .welcome-message {
+            font-size: 1.5em;
+        }
+    }
 </style>
