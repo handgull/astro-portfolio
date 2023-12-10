@@ -39,8 +39,8 @@ import StackButton from "../components/StackButton.astro";
         right={false}
     />
     <div class="buttons-container">
-        <StackButton imageSrc="js-logo.png" />
-        <StackButton imageSrc="flutter-logo.jpg" />
+        <StackButton imageSrc="js-logo.png" href="#" color="yellow" />
+        <StackButton imageSrc="flutter-logo.jpg" href="#" color="blue" />
     </div>
     <script>
         import { aosInit } from "../js/aos";
@@ -57,6 +57,11 @@ import StackButton from "../components/StackButton.astro";
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 250px;
+    }
+
+    @media (max-width: 950px) {
+        .buttons-container {
+            flex-direction: column;
+        }
     }
 </style>

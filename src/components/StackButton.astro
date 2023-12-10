@@ -1,12 +1,14 @@
 ---
 interface Props {
     imageSrc: string;
+    href: string;
+    color: string;
 }
 
-const { imageSrc } = Astro.props;
+const { imageSrc, href, color } = Astro.props;
 ---
 
-<a href="#" class="animated-button1">
+<a href="#" class={color === "yellow" ? "animated-button3" : "animated-button"}>
     <span></span>
     <span></span>
     <span></span>
