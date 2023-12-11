@@ -1,5 +1,5 @@
 ---
-import PortfolioText from "./PortfolioText.astro";
+import PortfolioText from "./react/PortfolioText.jsx";
 interface Props {
     it: string;
     en: string;
@@ -11,7 +11,7 @@ const { it, en, right } = Astro.props;
 
 <div data-aos="fade-up" class="sentences">
     {right && <div class="spacer" />}
-    <PortfolioText it={it} en={en} />
+    <PortfolioText client:visible />
     {!right && <div class="spacer" />}
 </div>
 <style>

@@ -1,5 +1,5 @@
 ---
-import PortfolioText from "./PortfolioText.astro";
+import PortfolioText from "./react/PortfolioText.jsx";
 interface Props {
     it: string;
     en: string;
@@ -9,15 +9,15 @@ const { it, en } = Astro.props;
 ---
 
 <div class="welcome-message">
-    <div class="welcome-text"><PortfolioText it={it} en={en} /></div>
+    <div class="welcome-text"><PortfolioText client:visible /></div>
     <div class="mouse_scroll">
         <div class="mouse">
             <div class="wheel"></div>
         </div>
         <div>
-            <span class="m_scroll_arrows unu"></span>
-            <span class="m_scroll_arrows doi"></span>
-            <span class="m_scroll_arrows trei"></span>
+            <span class="m_scroll_arrows one"></span>
+            <span class="m_scroll_arrows two"></span>
+            <span class="m_scroll_arrows three"></span>
         </div>
     </div>
 </div>
@@ -64,19 +64,19 @@ const { it, en } = Astro.props;
         height: 16px;
     }
 
-    .unu {
+    .one {
         margin-top: 1px;
     }
 
-    .unu,
-    .doi,
-    .trei {
+    .one,
+    .two,
+    .three {
         -webkit-animation: mouse-scroll 1s infinite;
         -moz-animation: mouse-scroll 1s infinite;
         animation: mouse-scroll 1s infinite;
     }
 
-    .unu {
+    .one {
         -webkit-animation-delay: 0.1s;
         -moz-animation-delay: 0.1s;
         -webkit-animation-direction: alternate;
@@ -85,7 +85,7 @@ const { it, en } = Astro.props;
         animation-delay: alternate;
     }
 
-    .doi {
+    .two {
         -webkit-animation-delay: 0.2s;
         -moz-animation-delay: 0.2s;
         -webkit-animation-direction: alternate;
@@ -96,7 +96,7 @@ const { it, en } = Astro.props;
         margin-top: -6px;
     }
 
-    .trei {
+    .three {
         -webkit-animation-delay: 0.3s;
         -moz-animation-delay: 0.3s;
         -webkit-animation-direction: alternate;

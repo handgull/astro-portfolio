@@ -4,11 +4,13 @@ import PortfolioSentence from "../components/PortfolioSentence.astro";
 import WelcomeMessage from "../components/WelcomeMessage.astro";
 import "aos/dist/aos.css";
 import StackButton from "../components/StackButton.astro";
+import PortfolioText from "../components/react/PortfolioText.jsx";
 ---
 
 <Layout title="handgull's portfolio">
     <WelcomeMessage it="Ciao, sono Andrea" en="en" />
     <div class="container">
+        <PortfolioText client:load />
         <PortfolioSentence
             it="Lavoro nell'ambito dello sviluppo frontend dal 2018."
             en="en"
