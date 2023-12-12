@@ -11,7 +11,7 @@ const { it, en, right } = Astro.props;
 
 <div data-aos="fade-up" class="sentences">
     {right && <div class="spacer" />}
-    <PortfolioText client:visible />
+    <PortfolioText it={it} en={en} client:visible />
     {!right && <div class="spacer" />}
 </div>
 <style>

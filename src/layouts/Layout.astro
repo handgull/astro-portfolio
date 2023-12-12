@@ -12,7 +12,7 @@ import type { ISourceOptions } from "tsparticles-engine";
 const options: ISourceOptions = {
     fps_limit: 60,
     interactivity: {
-        detectsOn: "canvas",
+        detectsOn: "window",
         events: {
             onHover: { enable: true, mode: "repulse" },
             resize: true,
@@ -77,7 +77,7 @@ const options: ISourceOptions = {
         <title>{title}</title>
     </head>
     <body>
-        <slot />
+        <div style="z-index: 1; position: relative;"><slot /></div>
         <Particles id="tsparticles" options={options} init="particlesInit" />
     </body>
 </html>

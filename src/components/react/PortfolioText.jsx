@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import styles from "./hidden-text.module.css";
 
-const PortfolioText = () => {
-    const [isToggled, setIsToggled] = useState(false);
+const PortfolioText = (props) => {
+    const [isTranslated, setIsTranslated] = useState(false);
 
     const handleToggle = () => {
-        setIsToggled(prev => !prev);
+        setIsTranslated(prev => !prev);
     };
 
-    console.log("render");
-
     return (
-        <button onClick={handleToggle}>{+isToggled}</button>
+        <>
+            <span className={isTranslated ? styles.hidden : ""}>{props.en}</span>
+            <span className={isTranslated ? "" : styles.hidden}>{props.it}</span>
+            <button onClick={handleToggle}>{+isTranslated}</button>
+        </>
     );
 };
 
