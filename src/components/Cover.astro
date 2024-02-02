@@ -46,7 +46,7 @@ const options: ISourceOptions = {
     import { type Engine } from "tsparticles-engine";
     import { loadFull } from "tsparticles";
 
-    window.particlesInit = async function (engine: Engine) {
+    (window as any).particlesInit = async function (engine: Engine) {
         await loadFull(engine);
     };
 </script>
