@@ -1,9 +1,69 @@
 ---
+import Particles from "astro-particles";
+import type { ISourceOptions } from "tsparticles-engine";
 
+const options: ISourceOptions = {
+    fps_limit: 60,
+    interactivity: {
+        detectsOn: "window",
+        events: {
+            onHover: { enable: true, mode: "repulse" },
+            resize: true,
+        },
+        modes: {
+            push: { particles_nb: 4 },
+            repulse: { distance: 200, duration: 0.4 },
+        },
+    },
+    particles: {
+        color: { value: "#ffffff" },
+        links: {
+            color: "#ffffff",
+            distance: 150,
+            enable: true,
+            opacity: 0.4,
+            width: 1,
+        },
+        move: {
+            bounce: false,
+            direction: "none",
+            enable: true,
+            outMode: "out",
+            random: false,
+            speed: 2,
+            straight: false,
+        },
+        number: { density: { enable: true, area: 800 }, value: 80 },
+        opacity: { value: 0.5 },
+        shape: { type: "circle" },
+        size: { random: true, value: 5 },
+    },
+    detectRetina: true,
+};
 ---
 
+<script>
+    import { type Container, type Engine } from "tsparticles-engine";
+    import { loadFull } from "tsparticles";
+
+    // the function name is the parameter passed to the init attribute
+    // required
+    // add the function to window is mandatory, it will be searched there
+    window.particlesInit = async function (engine: Engine) {
+        await loadFull(engine);
+    };
+
+    // the function name is the parameter passed to the loaded attribute
+    // optional
+    // add the function to window is mandatory, it will be searched there
+    window.particlesLoaded = function (container: Container) {
+        console.log("particlesLoaded callback");
+    };
+</script>
+
 <div class="hero min-h-screen bg-base-200">
-    <div class="hero-content text-center">
+    <Particles id="tsparticles" options={options} init="particlesInit" />
+    <div class="hero-content z-10">
         <div class="card max-w-xl bg-base-100 shadow-xl">
             <div class="card-body">
                 <h2 class="card-title text-6xl">Hello there!</h2>
