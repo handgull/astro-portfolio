@@ -66,18 +66,16 @@ const options: ISourceOptions = {
     <div id="tsparticles-container">
         <Particles id="tsparticles" options={options} init="particlesInit" />
     </div>
-    <Cover />
-    <AboutMe />
-    <TechStack />
-    <Experiences />
+    <div class="snap-y h-svh snap-mandatory overflow-x-auto scroll-smooth">
+        <div class="snap-start"><Cover /></div>
+        <div class="snap-start"><AboutMe /></div>
+        <div class="snap-start"><TechStack /></div>
+        <div class="snap-start"><Experiences /></div>
+    </div>
 </Layout>
 
 <style>
     #tsparticles-container {
         position: absolute;
-    }
-    html {
-        scroll-behavior: smooth;
-        background-color: black;
     }
 </style>
