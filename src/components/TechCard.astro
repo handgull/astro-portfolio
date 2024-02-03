@@ -10,7 +10,7 @@ const { imgUri, content, tooltipData } = Astro.props;
 
 <div class="tooltip" data-tip={tooltipData}>
     <div class="badge badge-lg gap-2 m-2">
-        {imgUri && <img src={imgUri} class="w-4" />}
+        {imgUri && <img src={imgUri} class="w-4" alt={`${content}Logo`} />}
         {content}
     </div>
 </div>
