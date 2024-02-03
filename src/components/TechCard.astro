@@ -1,0 +1,22 @@
+---
+interface Props {
+    imgUri?: string;
+    content: string;
+    tooltipData: string;
+}
+
+const { imgUri, content, tooltipData } = Astro.props;
+---
+
+<div class="tooltip" data-tip={tooltipData}>
+    <div class="badge badge-lg gap-2 m-2">
+        {imgUri && <img src={imgUri} class="w-4" />}
+        {content}
+    </div>
+</div>
+
+<style>
+    .badge:hover {
+        cursor: pointer;
+    }
+</style>

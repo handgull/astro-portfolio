@@ -1,0 +1,22 @@
+---
+interface Props {
+    title: string;
+    heroId: string;
+    ctaId: string;
+    ctaText: string;
+}
+
+const { title, heroId, ctaId, ctaText } = Astro.props;
+---
+
+<div id={heroId} class="hero min-h-screen">
+    <div class="hero-content">
+        <div class="card max-w-xl bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h1 class="card-title text-3xl">{title}</h1>
+                <slot />
+                <a href={`#${ctaId}`} class="btn btn-primary">{ctaText}</a>
+            </div>
+        </div>
+    </div>
+</div>
